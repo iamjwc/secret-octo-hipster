@@ -11,7 +11,7 @@
 @implementation SongsViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectContext;// = _managedObjectContext;
 
 - (NSFetchedResultsController *)fetchedResultsController {
   if (_fetchedResultsController != nil) {
@@ -36,42 +36,44 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  NSError *error = nil;
-  
   NSFetchedResultsController *controller = self.fetchedResultsController;
   
+  NSError *error = nil;
 	if (![controller performFetch:&error]) {
-		// Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
+		exit(-1);
 	}
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return [[self.fetchedResultsController sections] count];
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  // developer.apple.com/library/ios/#featuredarticles/ViewControllerPGforiPhoneOS/UsingViewControllersinYourApplication/UsingViewControllersinYourApplication.html
+  //  [self performSegueWithIdentifier:@"BPMSegue" sender:self];
+  //}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
-  self.title = @"Songs";
+  NSLog(@"%@", segue.identifier);
+  
+  if ([segue.identifier isEqualToString:@"BPMSegue"]) {
+    DetailViewController *detail = segue.destinationViewController;
+    
+    UITableViewCell* myCell = (UITableViewCell*)sender;
+    NSIndexPath* idx = [[self tableView] indexPathForCell:myCell];
+    
+    Song *s = (Song *)[self.fetchedResultsController objectAtIndexPath:idx];
+    detail.song = s;
+  }
 }
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//  return [[self.fetchedResultsController sections] count];
-//}
-
-- (void)refreshDisplay:(UITableView *)tableView {
-  NSString *a;
-  a = @"asdf";
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-  // Return the number of sections.
-  return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  id <NSFetchedResultsSectionInfo> sectionInfo;
-  sectionInfo = [[self.fetchedResultsController sections] objectAtIndex: section];
-  NSInteger b;
-  b = [sectionInfo numberOfObjects];
-  
-  return b;
-           //return [[self.fetchedResultsController sections] count];
+  id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex: section];
+  return [sectionInfo numberOfObjects];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -80,16 +82,12 @@
   cell.textLabel.text = song.name;  
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {  
   static NSString *CellIdentifier = @"Cell";
-  
-  //UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  
   if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    NSLog(@"No cell found");
   }
   
   // Set up the cell...

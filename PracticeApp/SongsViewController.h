@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Song.h"
 #import "AppDelegate.h"
+#import "DetailViewController.h"
 
 @interface SongsViewController : UITableViewController
 

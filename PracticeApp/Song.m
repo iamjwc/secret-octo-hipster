@@ -27,4 +27,14 @@
   return fr;
 }
 
+- (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context {
+  NSEntityDescription *entity = [NSEntityDescription entityForName:[[self class] className] inManagedObjectContext:context];
+
+  if (self = [super initWithEntity:entity insertIntoManagedObjectContext:context]) {
+    [self setName: name];
+  }
+  
+  return self;
+}
+
 @end

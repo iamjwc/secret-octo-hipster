@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = PracticeApp/DetailViewController.h; sourceTree = "<group>"; };
+		D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D948ADE315F3AFA7009D3A15 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
 		D948ADE415F3AFA7009D3A15 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
 		D948ADE715F3B2A9009D3A15 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -101,7 +101,6 @@
 		D969393F15E71E73004136ED = {
 			isa = PBXGroup;
 			children = (
-				D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */,
 				D9CB445D15EE58C000536A49 /* CoreData.framework */,
 				D969395415E71E74004136ED /* PracticeApp */,
 				D969397815E71E74004136ED /* PracticeAppTests */,
@@ -139,6 +138,7 @@
 				D969396315E71E74004136ED /* MainStoryboard_iPad.storyboard */,
 				D948ADE315F3AFA7009D3A15 /* SongsViewController.h */,
 				D948ADE415F3AFA7009D3A15 /* SongsViewController.m */,
+				D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */,
 				D969396A15E71E74004136ED /* DetailViewController.m */,
 				D969395515E71E74004136ED /* Supporting Files */,
 				D9CB445915ED7B0200536A49 /* Song.xcdatamodeld */,

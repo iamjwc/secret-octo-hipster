@@ -19,6 +19,7 @@
 @interface Song (CoreDataGeneratedAccessors)
 
 + (NSFetchRequest *)allSortedByName;
+- (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
 
 - (void)addTemposObject:(NSManagedObject *)value;
 - (void)removeTemposObject:(NSManagedObject *)value;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Song.h"
+#import "Tempo.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

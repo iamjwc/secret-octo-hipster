@@ -26,27 +26,25 @@
   
   NSManagedObjectContext *context = [self managedObjectContext];
   
-  NSEntityDescription *song = [NSEntityDescription
-                                entityForName:@"Song"
-                                inManagedObjectContext:context];
-  Song *s = [[Song alloc] initWithEntity:song insertIntoManagedObjectContext:context];
-  [s setName:@"Gold Rush"];
+  Song *s = [[Song alloc] initWithName:@"Gold Rush" andContext:context];
   
-  NSEntityDescription *song2 = [NSEntityDescription
-                               entityForName:@"Song"
+  NSEntityDescription *tempo = [NSEntityDescription
+                               entityForName:@"Tempo"
                                inManagedObjectContext:context];
+  
+  Tempo *t = [[Tempo alloc] initWithEntity:tempo insertIntoManagedObjectContext:context];
+  [t setBpm:[[NSNumber alloc] initWithInt:60]];
+  [s addTemposObject:t];
+  
+  Tempo *t2 = [[Tempo alloc] initWithEntity:tempo insertIntoManagedObjectContext:context];
+  [t2 setBpm:[[NSNumber alloc] initWithInt:80]];
+  [s addTemposObject:t2];
 
-  Song *s2 = [[Song alloc] initWithEntity:song2 insertIntoManagedObjectContext:context];
-  [s2 setName:@"Rebecca"];
-  
-  //[song setValue:@"Gold Rush" forKey:@"name"];
-    
-  
-  //NSManagedObject *tempo = [NSEntityDescription
-  //                          insertNewObjectForEntityForName:@"Tempo"
-  //                          inManagedObjectContext:context];
-  //  [tempo setValue:[[NSNumber alloc] initWithUnsignedShort:60] forKey:@"bpm"];
-  //[song setValue:tempo forKey:@"tempos"];
+  Song *s2 = [[Song alloc] initWithName:@"Rebecca" andContext:context];
+  Tempo *t3 = [[Tempo alloc] initWithEntity:tempo insertIntoManagedObjectContext:context];
+  [t3 setBpm:[[NSNumber alloc] initWithInt:100]];
+  [s2 addTemposObject:t3];
+
   
   NSError *error = nil;
   if (![context save:&error]) {
