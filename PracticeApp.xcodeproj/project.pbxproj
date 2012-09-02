@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D948ADE515F3AFA7009D3A15 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE415F3AFA7009D3A15 /* SongsViewController.m */; };
+		D948ADE915F3B2A9009D3A15 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE815F3B2A9009D3A15 /* Song.m */; };
+		D948ADEC15F3B2D5009D3A15 /* Tempo.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADEB15F3B2D5009D3A15 /* Tempo.m */; };
 		D969394F15E71E74004136ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969394E15E71E74004136ED /* UIKit.framework */; };
 		D969395115E71E74004136ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969395015E71E74004136ED /* Foundation.framework */; };
 		D969395315E71E74004136ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969395215E71E74004136ED /* CoreGraphics.framework */; };
@@ -15,13 +18,16 @@
 		D969395F15E71E74004136ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D969395E15E71E74004136ED /* AppDelegate.m */; };
 		D969396215E71E74004136ED /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D969396015E71E74004136ED /* MainStoryboard_iPhone.storyboard */; };
 		D969396515E71E74004136ED /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D969396315E71E74004136ED /* MainStoryboard_iPad.storyboard */; };
-		D969396815E71E74004136ED /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D969396715E71E74004136ED /* MasterViewController.m */; };
 		D969396B15E71E74004136ED /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D969396A15E71E74004136ED /* DetailViewController.m */; };
 		D969397315E71E74004136ED /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969397215E71E74004136ED /* SenTestingKit.framework */; };
 		D969397415E71E74004136ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969394E15E71E74004136ED /* UIKit.framework */; };
 		D969397515E71E74004136ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969395015E71E74004136ED /* Foundation.framework */; };
 		D969397D15E71E74004136ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D969397B15E71E74004136ED /* InfoPlist.strings */; };
 		D969398015E71E74004136ED /* PracticeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D969397F15E71E74004136ED /* PracticeAppTests.m */; };
+		D969399015E72BE2004136ED /* beaumont-50.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D969398F15E72BE2004136ED /* beaumont-50.aiff */; };
+		D969399215E72BF0004136ED /* beaumont.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D969399115E72BF0004136ED /* beaumont.aiff */; };
+		D9CB445B15ED7B0200536A49 /* Song.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9CB445915ED7B0200536A49 /* Song.xcdatamodeld */; };
+		D9CB445E15EE58C000536A49 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CB445D15EE58C000536A49 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,28 +41,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = PracticeApp/DetailViewController.h; sourceTree = "<group>"; };
+		D948ADE315F3AFA7009D3A15 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
+		D948ADE415F3AFA7009D3A15 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
+		D948ADE715F3B2A9009D3A15 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		D948ADE815F3B2A9009D3A15 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		D948ADEA15F3B2D5009D3A15 /* Tempo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tempo.h; sourceTree = "<group>"; };
+		D948ADEB15F3B2D5009D3A15 /* Tempo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tempo.m; sourceTree = "<group>"; };
 		D969394A15E71E74004136ED /* PracticeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D969394E15E71E74004136ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D969395015E71E74004136ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D969395215E71E74004136ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D969395615E71E74004136ED /* PracticeApp-Info.plist */ = {isa = PBXFileReference; path = "PracticeApp-Info.plist"; sourceTree = "<group>"; };
+		D969395615E71E74004136ED /* PracticeApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PracticeApp-Info.plist"; sourceTree = "<group>"; };
 		D969395815E71E74004136ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D969395A15E71E74004136ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D969395C15E71E74004136ED /* PracticeApp-Prefix.pch */ = {isa = PBXFileReference; path = "PracticeApp-Prefix.pch"; sourceTree = "<group>"; };
-		D969395D15E71E74004136ED /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		D969395C15E71E74004136ED /* PracticeApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PracticeApp-Prefix.pch"; sourceTree = "<group>"; };
+		D969395D15E71E74004136ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D969395E15E71E74004136ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D969396115E71E74004136ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		D969396415E71E74004136ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		D969396615E71E74004136ED /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
-		D969396715E71E74004136ED /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		D969396915E71E74004136ED /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
 		D969396A15E71E74004136ED /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D969397115E71E74004136ED /* PracticeAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D969397215E71E74004136ED /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		D969397A15E71E74004136ED /* PracticeAppTests-Info.plist */ = {isa = PBXFileReference; path = "PracticeAppTests-Info.plist"; sourceTree = "<group>"; };
+		D969397A15E71E74004136ED /* PracticeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PracticeAppTests-Info.plist"; sourceTree = "<group>"; };
 		D969397C15E71E74004136ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D969397E15E71E74004136ED /* PracticeAppTests.h */ = {isa = PBXFileReference; path = PracticeAppTests.h; sourceTree = "<group>"; };
+		D969397E15E71E74004136ED /* PracticeAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PracticeAppTests.h; sourceTree = "<group>"; };
 		D969397F15E71E74004136ED /* PracticeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PracticeAppTests.m; sourceTree = "<group>"; };
+		D969398F15E72BE2004136ED /* beaumont-50.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "beaumont-50.aiff"; sourceTree = "<group>"; };
+		D969399115E72BF0004136ED /* beaumont.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = beaumont.aiff; sourceTree = "<group>"; };
+		D9CB445A15ED7B0200536A49 /* Song.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Song.xcdatamodel; sourceTree = "<group>"; };
+		D9CB445D15EE58C000536A49 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CB445E15EE58C000536A49 /* CoreData.framework in Frameworks */,
 				D969394F15E71E74004136ED /* UIKit.framework in Frameworks */,
 				D969395115E71E74004136ED /* Foundation.framework in Frameworks */,
 				D969395315E71E74004136ED /* CoreGraphics.framework in Frameworks */,
@@ -86,6 +101,8 @@
 		D969393F15E71E73004136ED = {
 			isa = PBXGroup;
 			children = (
+				D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */,
+				D9CB445D15EE58C000536A49 /* CoreData.framework */,
 				D969395415E71E74004136ED /* PracticeApp */,
 				D969397815E71E74004136ED /* PracticeAppTests */,
 				D969394D15E71E74004136ED /* Frameworks */,
@@ -120,11 +137,15 @@
 				D969395E15E71E74004136ED /* AppDelegate.m */,
 				D969396015E71E74004136ED /* MainStoryboard_iPhone.storyboard */,
 				D969396315E71E74004136ED /* MainStoryboard_iPad.storyboard */,
-				D969396615E71E74004136ED /* MasterViewController.h */,
-				D969396715E71E74004136ED /* MasterViewController.m */,
-				D969396915E71E74004136ED /* DetailViewController.h */,
+				D948ADE315F3AFA7009D3A15 /* SongsViewController.h */,
+				D948ADE415F3AFA7009D3A15 /* SongsViewController.m */,
 				D969396A15E71E74004136ED /* DetailViewController.m */,
 				D969395515E71E74004136ED /* Supporting Files */,
+				D9CB445915ED7B0200536A49 /* Song.xcdatamodeld */,
+				D948ADEA15F3B2D5009D3A15 /* Tempo.h */,
+				D948ADEB15F3B2D5009D3A15 /* Tempo.m */,
+				D948ADE715F3B2A9009D3A15 /* Song.h */,
+				D948ADE815F3B2A9009D3A15 /* Song.m */,
 			);
 			path = PracticeApp;
 			sourceTree = "<group>";
@@ -132,6 +153,8 @@
 		D969395515E71E74004136ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D969399115E72BF0004136ED /* beaumont.aiff */,
+				D969398F15E72BE2004136ED /* beaumont-50.aiff */,
 				D969395615E71E74004136ED /* PracticeApp-Info.plist */,
 				D969395715E71E74004136ED /* InfoPlist.strings */,
 				D969395A15E71E74004136ED /* main.m */,
@@ -205,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = Animoto;
+				ORGANIZATIONNAME = "Justin Camerer";
 			};
 			buildConfigurationList = D969394415E71E73004136ED /* Build configuration list for PBXProject "PracticeApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -233,6 +256,8 @@
 				D969395915E71E74004136ED /* InfoPlist.strings in Resources */,
 				D969396215E71E74004136ED /* MainStoryboard_iPhone.storyboard in Resources */,
 				D969396515E71E74004136ED /* MainStoryboard_iPad.storyboard in Resources */,
+				D969399015E72BE2004136ED /* beaumont-50.aiff in Resources */,
+				D969399215E72BF0004136ED /* beaumont.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +294,11 @@
 			files = (
 				D969395B15E71E74004136ED /* main.m in Sources */,
 				D969395F15E71E74004136ED /* AppDelegate.m in Sources */,
-				D969396815E71E74004136ED /* MasterViewController.m in Sources */,
 				D969396B15E71E74004136ED /* DetailViewController.m in Sources */,
+				D9CB445B15ED7B0200536A49 /* Song.xcdatamodeld in Sources */,
+				D948ADE515F3AFA7009D3A15 /* SongsViewController.m in Sources */,
+				D948ADE915F3B2A9009D3A15 /* Song.m in Sources */,
+				D948ADEC15F3B2D5009D3A15 /* Tempo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +478,7 @@
 				D969398515E71E74004136ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D969398615E71E74004136ED /* Build configuration list for PBXNativeTarget "PracticeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -458,8 +487,22 @@
 				D969398815E71E74004136ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9CB445915ED7B0200536A49 /* Song.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9CB445A15ED7B0200536A49 /* Song.xcdatamodel */,
+			);
+			currentVersion = D9CB445A15ED7B0200536A49 /* Song.xcdatamodel */;
+			path = Song.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D969394115E71E73004136ED /* Project object */;
 }

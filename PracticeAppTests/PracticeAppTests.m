@@ -3,7 +3,7 @@
 //  PracticeAppTests
 //
 //  Created by Justin Camerer on 8/23/12.
-//  Copyright (c) 2012 Animoto. All rights reserved.
+//  Copyright (c) 2012 Justin Camerer. All rights reserved.
 //
 
 #import "PracticeAppTests.h"

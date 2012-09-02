@@ -3,7 +3,7 @@
 //  PracticeApp
 //
 //  Created by Justin Camerer on 8/23/12.
-//  Copyright (c) 2012 Animoto. All rights reserved.
+//  Copyright (c) 2012 Justin Camerer. All rights reserved.
 //
 
 #import "MasterViewController.h"
@@ -77,6 +77,39 @@
         return YES;
     }
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSLog(@"cell was nil");
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectZero];
+        
+    }
+
+    [[cell textLabel] setText:@"hey"];
+    
+    // Set up the cell...
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // developer.apple.com/library/ios/#featuredarticles/ViewControllerPGforiPhoneOS/UsingViewControllersinYourApplication/UsingViewControllersinYourApplication.html
+    [self performSegueWithIdentifier:@"BPMSegue" sender:self];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
