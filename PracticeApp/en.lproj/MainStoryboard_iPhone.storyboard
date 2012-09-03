@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="1FI-pV-CEj"/>
+                    <tabBarItem key="tabBarItem" title="Store" id="1FI-pV-CEj"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-183" y="269"/>
@@ -38,7 +38,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ns-hH-pUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="AB0-xz-deO" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="QL3-RK-bQf">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -92,26 +92,29 @@
                     <navigationItem key="navigationItem" title="Songs" id="35"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="455" y="64"/>
+            <point key="canvasLocation" x="407" y="-327"/>
         </scene>
         <scene sceneID="cVA-IZ-7t1">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-G3-GCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="BPM" id="lvg-CH-tww" customClass="DetailViewController" sceneMemberID="viewController">
+                <tableViewController title="BPM" id="lvg-CH-tww" customClass="BpmsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wkh-oZ-b4i">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BPMCell" id="MXG-Ch-0Fg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BPMCell" id="MXG-Ch-0Fg">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="DDJ-5J-7mV" kind="push" identifier="PlayerSegue" id="WU9-5K-61e"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -123,12 +126,63 @@
                     <navigationItem key="navigationItem" title="BPM" id="2NB-R9-Vuy"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="958" y="64"/>
+            <point key="canvasLocation" x="966" y="-327"/>
+        </scene>
+        <scene sceneID="e6z-Ax-9gc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PK0-eO-Wgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="DDJ-5J-7mV" customClass="PlayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OCP-kO-fLV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="auf-yI-fmy">
+                                <rect key="frame" x="101" y="115" width="118" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="zHr-cb-MmX">
+                                <rect key="frame" x="121" y="239" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8dR-SU-F6L">
+                                <rect key="frame" x="124" y="170" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPause:" destination="DDJ-5J-7mV" eventType="touchUpInside" id="Ss9-lc-J1a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="inM-Ep-s8y"/>
+                    <connections>
+                        <outlet property="playPause" destination="8dR-SU-F6L" id="TEp-hA-9yT"/>
+                        <outlet property="progressSlider" destination="auf-yI-fmy" id="vhQ-LQ-lD5"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-327"/>
         </scene>
     </scenes>
     <classes>
-        <class className="DetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+        <class className="BpmsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BpmsViewController.h"/>
+        </class>
+        <class className="PlayerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playPause:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playPause" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressSlider" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="SongsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SongsViewController.h"/>

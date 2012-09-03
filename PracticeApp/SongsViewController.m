@@ -60,7 +60,7 @@
   NSLog(@"%@", segue.identifier);
   
   if ([segue.identifier isEqualToString:@"BPMSegue"]) {
-    DetailViewController *detail = segue.destinationViewController;
+    BpmsViewController *detail = segue.destinationViewController;
     
     UITableViewCell* myCell = (UITableViewCell*)sender;
     NSIndexPath* idx = [[self tableView] indexPathForCell:myCell];

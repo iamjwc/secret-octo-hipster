@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Justin Camerer. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "BpmsViewController.h"
 
-@implementation DetailViewController
+@implementation BpmsViewController
 
 @synthesize song;
 
@@ -18,6 +18,22 @@
   
   [[self navigationItem] setTitle:song.name];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  NSLog(@"%@", segue.identifier);
+  
+  if ([segue.identifier isEqualToString:@"PlayerSegue"]) {
+    PlayerViewController *player = segue.destinationViewController;
+    
+    UITableViewCell* myCell = (UITableViewCell*)sender;
+    NSIndexPath* idx = [[self tableView] indexPathForCell:myCell];
+    
+    player.song = self.song;
+    player.tempo = (Tempo *)[[[self.song tempos] allObjects] objectAtIndex:[idx row]];
+  }
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

@@ -12,5 +12,6 @@
 @implementation Tempo
 
 @dynamic bpm;
+@dynamic path;
 
 @end

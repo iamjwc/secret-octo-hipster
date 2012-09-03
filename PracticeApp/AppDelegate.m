@@ -23,7 +23,8 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     splitViewController.delegate = (id)navigationController.topViewController;
   }
-  
+
+  /*
   NSManagedObjectContext *context = [self managedObjectContext];
   
   Song *s = [[Song alloc] initWithName:@"Gold Rush" andContext:context];
@@ -34,15 +35,18 @@
   
   Tempo *t = [[Tempo alloc] initWithEntity:tempo insertIntoManagedObjectContext:context];
   [t setBpm:[[NSNumber alloc] initWithInt:60]];
+  [t setPath:[[NSBundle mainBundle] pathForResource:@"beaumont-50" ofType:@"aiff"]];
   [s addTemposObject:t];
   
   Tempo *t2 = [[Tempo alloc] initWithEntity:tempo insertIntoManagedObjectContext:context];
   [t2 setBpm:[[NSNumber alloc] initWithInt:80]];
+  [t2 setPath:[[NSBundle mainBundle] pathForResource:@"beaumont" ofType:@"aiff"]];
   [s addTemposObject:t2];
 
   Song *s2 = [[Song alloc] initWithName:@"Rebecca" andContext:context];
   Tempo *t3 = [[Tempo alloc] initWithEntity:tempo insertIntoManagedObjectContext:context];
   [t3 setBpm:[[NSNumber alloc] initWithInt:100]];
+  [t3 setPath:[[NSBundle mainBundle] pathForResource:@"beaumont" ofType:@"aiff"]];
   [s2 addTemposObject:t3];
 
   
@@ -50,7 +54,7 @@
   if (![context save:&error]) {
     NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
   }
-  
+  */
   
   return YES;
 }

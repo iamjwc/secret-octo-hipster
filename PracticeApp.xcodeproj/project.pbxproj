@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D906921515F41DC900224E06 /* notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D906921415F41DC900224E06 /* notes.rtf */; };
+		D906922115F4F81500224E06 /* AudioPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = D906922015F4F81500224E06 /* AudioPlayback.m */; };
+		D906922515F50B6200224E06 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D906922415F50B6200224E06 /* PlayerViewController.m */; };
+		D906922715F50D5300224E06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D906922615F50D5300224E06 /* AVFoundation.framework */; };
 		D948ADE515F3AFA7009D3A15 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE415F3AFA7009D3A15 /* SongsViewController.m */; };
 		D948ADE915F3B2A9009D3A15 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE815F3B2A9009D3A15 /* Song.m */; };
 		D948ADEC15F3B2D5009D3A15 /* Tempo.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADEB15F3B2D5009D3A15 /* Tempo.m */; };
@@ -18,7 +22,7 @@
 		D969395F15E71E74004136ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D969395E15E71E74004136ED /* AppDelegate.m */; };
 		D969396215E71E74004136ED /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D969396015E71E74004136ED /* MainStoryboard_iPhone.storyboard */; };
 		D969396515E71E74004136ED /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D969396315E71E74004136ED /* MainStoryboard_iPad.storyboard */; };
-		D969396B15E71E74004136ED /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D969396A15E71E74004136ED /* DetailViewController.m */; };
+		D969396B15E71E74004136ED /* BpmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D969396A15E71E74004136ED /* BpmsViewController.m */; };
 		D969397315E71E74004136ED /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969397215E71E74004136ED /* SenTestingKit.framework */; };
 		D969397415E71E74004136ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969394E15E71E74004136ED /* UIKit.framework */; };
 		D969397515E71E74004136ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969395015E71E74004136ED /* Foundation.framework */; };
@@ -41,7 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D906921415F41DC900224E06 /* notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = notes.rtf; sourceTree = "<group>"; };
+		D906921F15F4F81500224E06 /* AudioPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayback.h; sourceTree = "<group>"; };
+		D906922015F4F81500224E06 /* AudioPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayback.m; sourceTree = "<group>"; };
+		D906922315F50B6200224E06 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		D906922415F50B6200224E06 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		D906922615F50D5300224E06 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D90DD9ED15F3E67D00AD33F9 /* BpmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BpmsViewController.h; sourceTree = "<group>"; };
 		D948ADE315F3AFA7009D3A15 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
 		D948ADE415F3AFA7009D3A15 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
 		D948ADE715F3B2A9009D3A15 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -60,7 +70,7 @@
 		D969395E15E71E74004136ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D969396115E71E74004136ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		D969396415E71E74004136ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		D969396A15E71E74004136ED /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D969396A15E71E74004136ED /* BpmsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BpmsViewController.m; sourceTree = "<group>"; };
 		D969397115E71E74004136ED /* PracticeAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D969397215E71E74004136ED /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D969397A15E71E74004136ED /* PracticeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PracticeAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D906922715F50D5300224E06 /* AVFoundation.framework in Frameworks */,
 				D9CB445E15EE58C000536A49 /* CoreData.framework in Frameworks */,
 				D969394F15E71E74004136ED /* UIKit.framework in Frameworks */,
 				D969395115E71E74004136ED /* Foundation.framework in Frameworks */,
@@ -101,6 +112,7 @@
 		D969393F15E71E73004136ED = {
 			isa = PBXGroup;
 			children = (
+				D906922615F50D5300224E06 /* AVFoundation.framework */,
 				D9CB445D15EE58C000536A49 /* CoreData.framework */,
 				D969395415E71E74004136ED /* PracticeApp */,
 				D969397815E71E74004136ED /* PracticeAppTests */,
@@ -134,12 +146,17 @@
 			children = (
 				D969395D15E71E74004136ED /* AppDelegate.h */,
 				D969395E15E71E74004136ED /* AppDelegate.m */,
+				D906921F15F4F81500224E06 /* AudioPlayback.h */,
+				D906922015F4F81500224E06 /* AudioPlayback.m */,
+				D906921415F41DC900224E06 /* notes.rtf */,
 				D969396015E71E74004136ED /* MainStoryboard_iPhone.storyboard */,
 				D969396315E71E74004136ED /* MainStoryboard_iPad.storyboard */,
 				D948ADE315F3AFA7009D3A15 /* SongsViewController.h */,
 				D948ADE415F3AFA7009D3A15 /* SongsViewController.m */,
-				D90DD9ED15F3E67D00AD33F9 /* DetailViewController.h */,
-				D969396A15E71E74004136ED /* DetailViewController.m */,
+				D90DD9ED15F3E67D00AD33F9 /* BpmsViewController.h */,
+				D969396A15E71E74004136ED /* BpmsViewController.m */,
+				D906922315F50B6200224E06 /* PlayerViewController.h */,
+				D906922415F50B6200224E06 /* PlayerViewController.m */,
 				D969395515E71E74004136ED /* Supporting Files */,
 				D9CB445915ED7B0200536A49 /* Song.xcdatamodeld */,
 				D948ADEA15F3B2D5009D3A15 /* Tempo.h */,
@@ -258,6 +275,7 @@
 				D969396515E71E74004136ED /* MainStoryboard_iPad.storyboard in Resources */,
 				D969399015E72BE2004136ED /* beaumont-50.aiff in Resources */,
 				D969399215E72BF0004136ED /* beaumont.aiff in Resources */,
+				D906921515F41DC900224E06 /* notes.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,11 +312,13 @@
 			files = (
 				D969395B15E71E74004136ED /* main.m in Sources */,
 				D969395F15E71E74004136ED /* AppDelegate.m in Sources */,
-				D969396B15E71E74004136ED /* DetailViewController.m in Sources */,
+				D969396B15E71E74004136ED /* BpmsViewController.m in Sources */,
 				D9CB445B15ED7B0200536A49 /* Song.xcdatamodeld in Sources */,
 				D948ADE515F3AFA7009D3A15 /* SongsViewController.m in Sources */,
 				D948ADE915F3B2A9009D3A15 /* Song.m in Sources */,
 				D948ADEC15F3B2D5009D3A15 /* Tempo.m in Sources */,
+				D906922115F4F81500224E06 /* AudioPlayback.m in Sources */,
+				D906922515F50B6200224E06 /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

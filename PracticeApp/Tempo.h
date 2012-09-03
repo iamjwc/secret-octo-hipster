@@ -13,5 +13,6 @@
 @interface Tempo : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * bpm;
+@property (nonatomic, retain) NSString * path;
 
 @end

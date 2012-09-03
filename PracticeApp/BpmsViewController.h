@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Song.h"
 #import "AppDelegate.h"
+#import "Tempo.h"
+#import "PlayerViewController.h"
 
-@interface DetailViewController : UITableViewController
+@interface BpmsViewController : UITableViewController
 
 @property (strong, nonatomic) Song *song;
 
