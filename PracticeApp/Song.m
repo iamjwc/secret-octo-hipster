@@ -37,4 +37,10 @@
   return self;
 }
 
+- (NSArray *)sortedTempos
+{
+  NSSortDescriptor *bpm = [[NSSortDescriptor alloc] initWithKey:@"bpm" ascending:YES];
+  return [self.tempos sortedArrayUsingDescriptors:[NSArray arrayWithObjects: bpm, nil]];
+}
+
 @end

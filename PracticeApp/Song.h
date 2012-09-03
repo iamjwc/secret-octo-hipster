@@ -14,13 +14,15 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *tempos;
-@end
-
-@interface Song (CoreDataGeneratedAccessors)
 
 + (NSFetchRequest *)allSortedByName;
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
 
+- (NSArray *)sortedTempos;
+
+@end
+
+@interface Song (CoreDataGeneratedAccessors)
 - (void)addTemposObject:(NSManagedObject *)value;
 - (void)removeTemposObject:(NSManagedObject *)value;
 - (void)addTempos:(NSSet *)values;

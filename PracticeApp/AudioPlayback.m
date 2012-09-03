@@ -34,6 +34,16 @@
   return self.backingTrackPlayer && [self.backingTrackPlayer isPlaying];
 }
 
+- (NSTimeInterval)currentTime
+{
+  return [self.backingTrackPlayer currentTime];
+}
+
+- (NSTimeInterval)duration
+{
+  return [self.backingTrackPlayer duration];
+}
+
 - (void)stop
 {
   if (self.isPlaying) {

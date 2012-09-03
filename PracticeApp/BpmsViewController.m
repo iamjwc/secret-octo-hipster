@@ -30,7 +30,7 @@
     NSIndexPath* idx = [[self tableView] indexPathForCell:myCell];
     
     player.song = self.song;
-    player.tempo = (Tempo *)[[[self.song tempos] allObjects] objectAtIndex:[idx row]];
+    player.tempo = (Tempo *)[[self.song sortedTempos] objectAtIndex:[idx row]];
   }
 }
 
@@ -46,13 +46,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [[self.song tempos] count];
+  return [[self.song sortedTempos] count];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
   //Song *song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
   
-  Tempo *t = [[self.song.tempos allObjects] objectAtIndex:[indexPath row]];
+  Tempo *t = [[self.song sortedTempos] objectAtIndex:[indexPath row]];
   
   cell.textLabel.text = [NSString stringWithFormat:@"%@", t.bpm];
 }

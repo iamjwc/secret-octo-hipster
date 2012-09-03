@@ -17,14 +17,15 @@
   Tempo *tempo;
 }
 
-@property (nonatomic, retain) IBOutlet UIButton *playPause;
-@property (nonatomic, retain) IBOutlet UISlider *progressSlider;
+@property (nonatomic, retain) IBOutlet UIButton *playPauseButton;
+@property (nonatomic, retain) IBOutlet UIProgressView *progress;
 
 @property (nonatomic, retain) Song *song;
 @property (nonatomic, retain) Tempo *tempo;
 @property (nonatomic, retain) AudioPlayback *audioPlayback;
 
-- (IBAction)playPause:(UIButton*)sender;
+- (IBAction)playPausePressed:(UIButton*)sender;
 - (void)playPauseChanged:(id)sender;
+- (void)playPause;
 
 @end

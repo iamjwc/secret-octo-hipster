@@ -10,8 +10,8 @@
 
 @implementation PlayerViewController
 
-@synthesize playPause;
-@synthesize progressSlider;
+@synthesize playPauseButton;
+@synthesize progress;
 @synthesize song;
 @synthesize audioPlayback;
 
@@ -37,14 +37,38 @@
   [super viewDidLoad];
   
   NSString *formattedString = [NSString stringWithFormat:@"%@bpm", tempo.bpm];
-  
   [[self navigationItem] setTitle:formattedString];
+  
+  [self playPause];
+
+}
+
+- (void)updatePlayhead
+{
+  float percentage = self.audioPlayback.currentTime/(float)self.audioPlayback.duration;
+  [self.progress setProgress:percentage];
+  
+  if ([self.audioPlayback isPlaying]) {
+    [self performSelector:@selector(updatePlayhead) withObject:nil afterDelay: 0.5f];
+  }
+}
+
+- (void)playPause
+{
+  
+  if (self.audioPlayback) {
+    [self.audioPlayback playPause];
+    
+    if ([self.audioPlayback isPlaying]) {
+      [self updatePlayhead];
+    }
+  }
 }
 
 
-- (IBAction)playPause:(UIButton*)sender {
+- (IBAction)playPausePressed:(UIButton*)sender {
   if (self.audioPlayback) {
-    [self.audioPlayback playPause];
+    [self playPause];
   }
 }
 
@@ -55,20 +79,19 @@
   }
   
   if ([self.audioPlayback isPlaying]) {
-    [self.playPause setTitle:@"Pause" forState:UIControlStateNormal];
+    [self.playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
   } else {
-    [self.playPause setTitle:@"Play" forState:UIControlStateNormal];
+    [self.playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
   }
 }
 
-- (void)viewDidUnload
+- (void)viewWillDisappear:(BOOL)animated
 {
+  [super viewWillDisappear:animated];
+  
   if (self.audioPlayback) {
     [self.audioPlayback stop];
   }
-  [super viewDidUnload];
-  // Release any retained subviews of the main view.
-  // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

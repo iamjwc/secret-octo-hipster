@@ -26,5 +26,7 @@
 - (BOOL)isPlaying;
 - (void)playPause;
 - (void)stop;
+- (NSTimeInterval)currentTime;
+- (NSTimeInterval)duration;
 
 @end
