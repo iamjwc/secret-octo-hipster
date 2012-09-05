@@ -8,21 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "SBJson.h"
-
+#import "ASIHTTPRequest.h"
+#import "RemoteSong.h"
 
 @protocol RemoteSongCollectionDelegate
 - (void)songsFetched:(id)sender;
 @end
 
-@interface RemoteSongCollection : NSObject <NSURLConnectionDelegate>
-{
-  NSURLConnection *connection;
-  NSMutableData *data;
-}
+@interface RemoteSongCollection : NSObject
 
-@property (nonatomic, retain) NSDictionary *json;
-@property (nonatomic, retain) id <RemoteSongCollectionDelegate> delegate;
+@property (retain) NSArray *songs;
+@property (retain) id <RemoteSongCollectionDelegate> delegate;
 
-- (void)getAvailableSongs;
+- (void)fetch;
 
 @end

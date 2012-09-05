@@ -11,67 +11,51 @@
 @implementation RemoteSongCollection
 
 @synthesize delegate;
-@synthesize json;
+@synthesize songs;
 
-- (void)getAvailableSongs
+- (id)init {
+  if (self = [super init]) {
+    self.songs = nil;
+  }
+  return self;
+}
+
+- (void)fetch
 {
   NSURL *url = [NSURL URLWithString:@"http://localhost:8080/songs"];
-  NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-  
-  connection = [NSURLConnection connectionWithRequest:request delegate:self];
-  data = [NSMutableData data];
+  ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+  [request setDelegate:self];
+  [request startAsynchronous];
 }
 
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+- (NSArray*)remoteSongsWithDictionary:(NSArray*)songs
 {
-  // This method is called when the server has determined that it
-  // has enough information to create the NSURLResponse.
+  NSMutableArray *remoteSongs = [[NSMutableArray alloc] init];
+  for (NSDictionary *s in songs) {
+    [remoteSongs addObject:[[RemoteSong alloc] initWithDictionary:s]];
+  }
   
-  // It can be called multiple times, for example in the case of a
-  // redirect, so each time we reset the data.
-  
-  // receivedData is an instance variable declared elsewhere.
-  [data setLength:0];
+  return remoteSongs;
 }
 
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)d
+- (void)requestFinished:(ASIHTTPRequest *)request
 {
-  // Append the new data to receivedData.
-  // receivedData is an instance variable declared elsewhere.
-  [data appendData:d];
-}
-
-
-
-- (void)connection:(NSURLConnection *)connection
-  didFailWithError:(NSError *)error
-{
-  connection = nil;
-  data = nil;
-  
-  // inform the user
-  NSLog(@"Connection failed! Error - %@ %@",
-        [error localizedDescription],
-        [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-  // do something with the data
-  // receivedData is declared as a method instance elsewhere
-  NSLog(@"Succeeded! Received %d bytes of data",[data length]);
-  
-  
-  NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  NSString *responseJson = [request responseString];
   
   SBJsonParser *parser = [[SBJsonParser alloc] init];
   parser.maxDepth = 10;
   
-  self.json = (NSMutableDictionary *)[parser objectWithString:s];
+  NSDictionary *json = [parser objectWithString:responseJson];
 
+  self.songs = [self remoteSongsWithDictionary:[json objectForKey:@"songs"]];
+  
   [delegate songsFetched:self];
 }
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+  NSError *error = [request error];
+}
+
 
 @end

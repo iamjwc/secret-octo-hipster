@@ -11,6 +11,7 @@
 
 @implementation Song
 
+@dynamic globalId;
 @dynamic name;
 @dynamic tempos;
 
@@ -25,6 +26,14 @@
   [fr setSortDescriptors:[NSArray arrayWithObject:sort]];
   
   return fr;
+}
+
+- (id)initWithName:(NSString *)name
+{
+  if (self = [super init]) {
+    self.name = name;
+  }
+  return self;
 }
 
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context {

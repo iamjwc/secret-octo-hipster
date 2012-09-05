@@ -12,13 +12,15 @@
 
 @interface Song : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString *globalId;
+@property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSSet *tempos;
 
 + (NSFetchRequest *)allSortedByName;
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
 
 - (NSArray *)sortedTempos;
+
 
 @end
 

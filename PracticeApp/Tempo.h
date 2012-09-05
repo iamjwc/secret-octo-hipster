@@ -2,7 +2,7 @@
 //  Tempo.h
 //  PracticeApp
 //
-//  Created by Justin Camerer on 9/2/12.
+//  Created by Justin Camerer on 9/3/12.
 //  Copyright (c) 2012 Justin Camerer. All rights reserved.
 //
 
@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSNumber * bpm;
 @property (nonatomic, retain) NSString * path;
+@property (nonatomic, retain) NSNumber * downloaded;
 
 @end

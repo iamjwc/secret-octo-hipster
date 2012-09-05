@@ -13,36 +13,57 @@
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize managedObjectContext;// = _managedObjectContext;
 
-- (NSFetchedResultsController *)fetchedResultsController {
-  if (_fetchedResultsController != nil) {
-    return _fetchedResultsController;
-  }
 
+
+- (NSFetchedResultsController *)refetch {
   NSFetchRequest *fetchRequest = [Song allSortedByName];
   
   NSFetchedResultsController *controller = [[NSFetchedResultsController alloc]
-    initWithFetchRequest:fetchRequest
-    managedObjectContext:self.managedObjectContext
-    sectionNameKeyPath:nil
-    cacheName:nil];
+                                            initWithFetchRequest:fetchRequest
+                                            managedObjectContext:self.managedObjectContext
+                                            sectionNameKeyPath:nil
+                                            cacheName:nil];
   
   controller.delegate = self;
   
   _fetchedResultsController = controller;
-  
   return controller;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+  if (_fetchedResultsController != nil) {
+    return _fetchedResultsController;
+  }
+  
+  return [self refetch];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  NSFetchedResultsController *controller = self.fetchedResultsController;
+  NSFetchedResultsController *controller = [self refetch];
   
   NSError *error = nil;
 	if (![controller performFetch:&error]) {
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);
 	}
+  
+  [[self tableView] reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  NSFetchedResultsController *controller = [self refetch];
+  
+  NSError *error = nil;
+	if (![controller performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
+	}
+
+  [[self tableView] reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -98,7 +119,7 @@
 
 - (NSManagedObjectContext*)managedObjectContext {
   AppDelegate *appDel = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-  return appDel.managedObjectContext;
+  return [[appDel class] managedObjectContext];
 }
 
 - (void)viewDidUnload {

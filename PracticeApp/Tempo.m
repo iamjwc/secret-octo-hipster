@@ -2,7 +2,7 @@
 //  Tempo.m
 //  PracticeApp
 //
-//  Created by Justin Camerer on 9/2/12.
+//  Created by Justin Camerer on 9/3/12.
 //  Copyright (c) 2012 Justin Camerer. All rights reserved.
 //
 
@@ -13,5 +13,6 @@
 
 @dynamic bpm;
 @dynamic path;
+@dynamic downloaded;
 
 @end
