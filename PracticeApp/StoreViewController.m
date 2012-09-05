@@ -59,7 +59,7 @@
 - (void)storeCellDownloadButtonPressedAtIndex:(NSInteger)i withSender:(id)sender {
   RemoteSong *rs = [remoteSongCollection.songs objectAtIndex:i];
   
-  Song *s = [[Song alloc] initWithName:rs.name andContext:[self managedObjectContext]];
+  Song *s = [[Song alloc] initWithRemoteSong:rs andContext:[self managedObjectContext]];
 
   NSError *error = nil;
   if (![[self managedObjectContext] save:&error]) {

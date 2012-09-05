@@ -28,19 +28,25 @@
   return fr;
 }
 
-- (id)initWithName:(NSString *)name
-{
-  if (self = [super init]) {
-    self.name = name;
-  }
-  return self;
-}
-
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context {
   NSEntityDescription *entity = [NSEntityDescription entityForName:[[self class] className] inManagedObjectContext:context];
 
   if (self = [super initWithEntity:entity insertIntoManagedObjectContext:context]) {
     [self setName: name];
+  }
+  
+  return self;
+}
+
+- (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context
+{
+  if (self = [self initWithName:remoteSong.name andContext:context]) {
+    self.globalId = remoteSong.globalId;
+    
+    for (RemoteTempo *remoteTempo in remoteSong.tempos) {
+      Tempo *t = [[Tempo alloc] initWithRemoteTempo:remoteTempo andContext:context];
+      [self addTemposObject:t];
+    }
   }
   
   return self;

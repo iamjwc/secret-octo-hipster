@@ -9,9 +9,10 @@
         <attribute name="bpm" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="downloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Song" positionX="-801" positionY="-3447" width="128" height="90"/>
-        <element name="Tempo" positionX="-657" positionY="-3402" width="128" height="60"/>
+        <element name="Tempo" positionX="-657" positionY="-3402" width="128" height="105"/>
     </elements>
 </model>

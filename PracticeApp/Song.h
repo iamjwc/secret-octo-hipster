@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "RemoteSong.h"
+#import "RemoteTempo.h"
+#import "Tempo.h"
 
 
 @interface Song : NSManagedObject
@@ -17,10 +20,11 @@
 @property (nonatomic, retain) NSSet *tempos;
 
 + (NSFetchRequest *)allSortedByName;
+
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
+- (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context;
 
 - (NSArray *)sortedTempos;
-
 
 @end
 
