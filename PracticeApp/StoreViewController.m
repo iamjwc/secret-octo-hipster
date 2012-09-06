@@ -51,7 +51,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *CellIdentifier = @"Cell";
+  static NSString *CellIdentifier = @"StoreCell";
   
   RemoteSong *rs = (RemoteSong*)[remoteSongs objectAtIndex:indexPath.row];
   

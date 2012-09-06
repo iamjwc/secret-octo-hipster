@@ -17,7 +17,6 @@ static NSMutableSet *allGlobalIds = nil;
 @dynamic name;
 @dynamic tempos;
 
-
 + (NSString *)className {
   return NSStringFromClass(self.class);
 }
@@ -76,6 +75,17 @@ static NSMutableSet *allGlobalIds = nil;
   }
   
   return self;
+}
+
+- (BOOL)temposAreDownloaded
+{
+  BOOL val = [self.tempos count] > 0;
+
+  for (Tempo *t in self.tempos) {
+    val &= [t.downloaded boolValue];
+  }
+  
+  return val;
 }
 
 - (NSArray *)sortedTempos

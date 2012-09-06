@@ -27,6 +27,7 @@
 - (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context;
 
 - (NSArray *)sortedTempos;
+- (BOOL)temposAreDownloaded;
 
 @end
 

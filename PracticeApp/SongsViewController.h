@@ -10,10 +10,14 @@
 #import "Song.h"
 #import "AppDelegate.h"
 #import "BpmsViewController.h"
+#import "SongCell.h"
+#import "ASIHTTPRequest.h"
+#import "ASINetworkQueue.h"
 
 @interface SongsViewController : UITableViewController
 
 @property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) ASINetworkQueue *networkQueue;
 
 @end

@@ -42,6 +42,7 @@
 		D932517115F6E0370087EFCD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D932517015F6E0370087EFCD /* libz.dylib */; };
 		D932517A15F6E43A0087EFCD /* RemoteSong.m in Sources */ = {isa = PBXBuildFile; fileRef = D932517915F6E43A0087EFCD /* RemoteSong.m */; };
 		D932517D15F6E9BF0087EFCD /* RemoteTempo.m in Sources */ = {isa = PBXBuildFile; fileRef = D932517C15F6E9BF0087EFCD /* RemoteTempo.m */; };
+		D932518015F842A80087EFCD /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D932517F15F842A80087EFCD /* SongCell.m */; };
 		D948ADE515F3AFA7009D3A15 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE415F3AFA7009D3A15 /* SongsViewController.m */; };
 		D948ADE915F3B2A9009D3A15 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE815F3B2A9009D3A15 /* Song.m */; };
 		D969394F15E71E74004136ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969394E15E71E74004136ED /* UIKit.framework */; };
@@ -144,6 +145,8 @@
 		D932517915F6E43A0087EFCD /* RemoteSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteSong.m; sourceTree = "<group>"; };
 		D932517B15F6E9BF0087EFCD /* RemoteTempo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteTempo.h; sourceTree = "<group>"; };
 		D932517C15F6E9BF0087EFCD /* RemoteTempo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteTempo.m; sourceTree = "<group>"; };
+		D932517E15F842A80087EFCD /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
+		D932517F15F842A80087EFCD /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		D948ADE315F3AFA7009D3A15 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
 		D948ADE415F3AFA7009D3A15 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
 		D948ADE715F3B2A9009D3A15 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 		D932517615F6E2F70087EFCD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D932517E15F842A80087EFCD /* SongCell.h */,
+				D932517F15F842A80087EFCD /* SongCell.m */,
 				D906925715F5602E00224E06 /* StoreCell.h */,
 				D906925815F5602F00224E06 /* StoreCell.m */,
 				D906925415F5379E00224E06 /* StoreViewController.h */,
@@ -562,6 +567,7 @@
 				D932516915F6DFAA0087EFCD /* Reachability.m in Sources */,
 				D932517A15F6E43A0087EFCD /* RemoteSong.m in Sources */,
 				D932517D15F6E9BF0087EFCD /* RemoteTempo.m in Sources */,
+				D932518015F842A80087EFCD /* SongCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
