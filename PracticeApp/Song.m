@@ -11,12 +11,38 @@
 
 @implementation Song
 
+static NSMutableSet *allGlobalIds = nil;
+
 @dynamic globalId;
 @dynamic name;
 @dynamic tempos;
 
+
 + (NSString *)className {
   return NSStringFromClass(self.class);
+}
+
++ (NSMutableSet*)allGlobalIds
+{
+  if (!allGlobalIds) {
+    allGlobalIds = [[NSMutableSet alloc] initWithObjects: nil];
+  }
+  
+  return allGlobalIds;
+}
+
++ (void)refreshGlobalIdsWithContext:(NSManagedObjectContext*)context
+{
+  NSError *error = nil;
+  
+  NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:[self className]];
+  NSArray *results = [context executeFetchRequest:fr error:&error];
+  
+  if (!error) {
+    for (Song *s in results) {
+      [allGlobalIds addObject:s.globalId];
+    }
+  }
 }
 
 + (NSFetchRequest *)allSortedByName {

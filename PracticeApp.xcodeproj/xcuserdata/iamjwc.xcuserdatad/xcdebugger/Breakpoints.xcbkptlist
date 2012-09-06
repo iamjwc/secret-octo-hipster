@@ -149,11 +149,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PracticeApp/Song.m"
-         timestampString = "368507957.373721"
+         timestampString = "368590185.362265"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "-initWithName:andContext:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -233,11 +233,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PracticeApp/StoreViewController.m"
-         timestampString = "368399344.8674"
+         timestampString = "368587573.024781"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "18"
-         endingLineNumber = "18"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
          landmarkName = "-songsFetched:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -247,25 +247,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PracticeApp/StoreViewController.m"
-         timestampString = "368506116.469599"
+         timestampString = "368590185.362265"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
-         landmarkName = "-tableView:numberOfRowsInSection:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "PracticeApp/StoreViewController.m"
-         timestampString = "368506116.469599"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -275,11 +261,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PracticeApp/StoreViewController.m"
-         timestampString = "368506116.469599"
+         timestampString = "368590185.362265"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -340,17 +326,31 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "PracticeApp/Song.m"
-         timestampString = "368508639.453957"
+         timestampString = "368590185.362265"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-initWithRemoteSong:andContext:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "PracticeApp/StoreViewController.m"
+         timestampString = "368590185.362265"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
+         landmarkName = "-storeCellDownloadButtonPressedAtIndex:withSender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

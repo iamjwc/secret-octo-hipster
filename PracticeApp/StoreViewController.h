@@ -18,6 +18,7 @@
 @interface StoreViewController : UITableViewController <RemoteSongCollectionDelegate, StoreCellDelegate>
 {
   RemoteSongCollection *remoteSongCollection;
+  NSMutableArray *remoteSongs;
 }
 
 @end

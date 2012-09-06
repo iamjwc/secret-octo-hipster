@@ -15,8 +15,7 @@
 @synthesize delegate;
 @synthesize index;
 
-
--(IBAction) buttonTouchUpInside:(id)sender
+- (IBAction)buttonTouchUpInside:(id)sender
 {
   [self.delegate storeCellDownloadButtonPressedAtIndex:self.index withSender:sender];
 }

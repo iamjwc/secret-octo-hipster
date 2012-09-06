@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSSet *tempos;
 
 + (NSFetchRequest *)allSortedByName;
++ (NSMutableSet*)allGlobalIds;
++ (void)refreshGlobalIdsWithContext:(NSManagedObjectContext*)context;
 
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
 - (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context;

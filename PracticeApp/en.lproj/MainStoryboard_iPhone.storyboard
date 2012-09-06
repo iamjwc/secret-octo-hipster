@@ -52,7 +52,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="XHy-pM-wOP">
-                                            <rect key="frame" x="12" y="11" width="189" height="21"/>
+                                            <rect key="frame" x="13" y="12" width="262" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

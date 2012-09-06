@@ -16,8 +16,8 @@
 
 @interface StoreCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UILabel* label;
-@property (nonatomic, retain) IBOutlet UIButton* downloadButton;
+@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UIButton *downloadButton;
 @property (nonatomic, retain) id delegate;
 @property (nonatomic, assign) NSInteger index;
 
