@@ -45,6 +45,8 @@
 		D932518015F842A80087EFCD /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D932517F15F842A80087EFCD /* SongCell.m */; };
 		D932518615F964C70087EFCD /* TempoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D932518515F964C70087EFCD /* TempoView.xib */; };
 		D932518915F965970087EFCD /* TempoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D932518815F965970087EFCD /* TempoViewController.m */; };
+		D932518F15F996F80087EFCD /* TempoScroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = D932518E15F996F80087EFCD /* TempoScroller.xib */; };
+		D932519415F998960087EFCD /* TempoScrollerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D932519315F998960087EFCD /* TempoScrollerController.m */; };
 		D948ADE515F3AFA7009D3A15 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE415F3AFA7009D3A15 /* SongsViewController.m */; };
 		D948ADE915F3B2A9009D3A15 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = D948ADE815F3B2A9009D3A15 /* Song.m */; };
 		D969394F15E71E74004136ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D969394E15E71E74004136ED /* UIKit.framework */; };
@@ -152,6 +154,9 @@
 		D932518515F964C70087EFCD /* TempoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempoView.xib; sourceTree = "<group>"; };
 		D932518715F965960087EFCD /* TempoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempoViewController.h; sourceTree = "<group>"; };
 		D932518815F965970087EFCD /* TempoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempoViewController.m; sourceTree = "<group>"; };
+		D932518E15F996F80087EFCD /* TempoScroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempoScroller.xib; sourceTree = "<group>"; };
+		D932519215F998950087EFCD /* TempoScrollerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempoScrollerController.h; sourceTree = "<group>"; };
+		D932519315F998960087EFCD /* TempoScrollerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempoScrollerController.m; sourceTree = "<group>"; };
 		D948ADE315F3AFA7009D3A15 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
 		D948ADE415F3AFA7009D3A15 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
 		D948ADE715F3B2A9009D3A15 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -334,6 +339,8 @@
 				D906922415F50B6200224E06 /* PlayerViewController.m */,
 				D932518715F965960087EFCD /* TempoViewController.h */,
 				D932518815F965970087EFCD /* TempoViewController.m */,
+				D932519215F998950087EFCD /* TempoScrollerController.h */,
+				D932519315F998960087EFCD /* TempoScrollerController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,6 +350,7 @@
 			children = (
 				D969396015E71E74004136ED /* MainStoryboard_iPhone.storyboard */,
 				D932518515F964C70087EFCD /* TempoView.xib */,
+				D932518E15F996F80087EFCD /* TempoScroller.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -507,6 +515,7 @@
 				D969399215E72BF0004136ED /* beaumont.aiff in Resources */,
 				D906921515F41DC900224E06 /* notes.rtf in Resources */,
 				D932518615F964C70087EFCD /* TempoView.xib in Resources */,
+				D932518F15F996F80087EFCD /* TempoScroller.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +587,7 @@
 				D932517D15F6E9BF0087EFCD /* RemoteTempo.m in Sources */,
 				D932518015F842A80087EFCD /* SongCell.m in Sources */,
 				D932518915F965970087EFCD /* TempoViewController.m in Sources */,
+				D932519415F998960087EFCD /* TempoScrollerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

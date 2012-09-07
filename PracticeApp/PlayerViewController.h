@@ -16,14 +16,10 @@
 {
   Song  *song;
   Tempo *tempo;
-  NSMutableArray *tempoViewControllers;
-  BOOL pageControlUsed;
 }
 
 @property (nonatomic, retain) IBOutlet UIButton *playPauseButton;
 @property (nonatomic, retain) IBOutlet UIProgressView *progress;
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic, retain) Song *song;
 @property (nonatomic, retain) Tempo *tempo;
@@ -32,6 +28,5 @@
 - (IBAction)playPausePressed:(UIButton*)sender;
 - (void)playPauseChanged:(id)sender;
 - (void)playPause;
-- (IBAction)changePage:(id)sender;
 
 @end
