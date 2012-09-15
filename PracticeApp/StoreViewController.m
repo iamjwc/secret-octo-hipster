@@ -14,6 +14,11 @@
 @synthesize networkQueue;
 
 
+- (NSManagedObjectContext*)managedObjectContext {
+  AppDelegate *appDel = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+  return [[appDel class] managedObjectContext];
+}
+
 - (void)downloadAllForSong:(Song*)song atCell:(StoreCell*)storeCell
 {
   if (song.temposAreDownloaded) {
@@ -93,16 +98,11 @@
 }
 
 - (void)songsFetched:(id)sender {
-  [remoteSongs removeAllObjects];
-  [remoteSongs addObjectsFromArray:remoteSongCollection.songs];
+  //[remoteSongs removeAllObjects];
+  //[remoteSongs addObjectsFromArray:remoteSongCollection.songs];
   
   UITableView *tableView = (UITableView *)self.view;
   [tableView reloadData];
-}
-
-- (NSManagedObjectContext*)managedObjectContext {
-  AppDelegate *appDel = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-  return [[appDel class] managedObjectContext];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -113,7 +113,7 @@
   
   remoteSongCollection = [[RemoteSongCollection alloc] init];
   remoteSongCollection.delegate = self;
-  [remoteSongCollection fetch];
+  //[remoteSongCollection fetch];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -143,8 +143,6 @@
   if (songInLibrary) {
     [cell.downloadButton setHidden:YES];
   }
-  
-  if (
 
   return cell;
 }

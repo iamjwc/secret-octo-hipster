@@ -31,7 +31,7 @@
   [self performSelectorInBackground:@selector(loadAudio:) withObject:tempo];
   isLoading = true;
   
-  [self updatePlayhead];
+  //[self updatePlayhead];
 }
 
 - (Tempo *)tempo
