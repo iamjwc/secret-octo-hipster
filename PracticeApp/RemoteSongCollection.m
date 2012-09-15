@@ -12,12 +12,12 @@
 
 @synthesize delegate;
 
-+ (void)updateSongsFromRemoteWithContext:(NSManagedObjectContext*)context;
+- (void)updateSongsFromRemoteWithContext:(NSManagedObjectContext*)c;
 {
   NSURL *url = [NSURL URLWithString:@"https://raw.github.com/gist/3687548/d2d2252356edf9f5a889bde5f1e713d1cbfc273a/file.json"];
   ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
   [request setDelegate:self];
-  [[request userInfo] setValue:context forKey:@"context"];
+  context = c;
   [request startAsynchronous];
 }
 
@@ -25,9 +25,12 @@
 {
   for (NSDictionary *s in songs) {
     RemoteSong *rs = [[RemoteSong alloc] initWithDictionary:s];
-    Song *s = [[Song alloc]  initWithRemoteSong:rs andContext:context];
+    
+    if (![Song findByGlobalId:rs.globalId withContext:context]) {
+      Song *s = [[Song alloc]  initWithRemoteSong:rs andContext:context];
+    }
   }
-  
+
   NSError *error = nil;
   if (![context save:&error])
   {
@@ -37,7 +40,6 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-  NSManagedObjectContext *context = [[request userInfo] objectForKey:@"context"];
   NSString *responseJson = [request responseString];
   
   SBJsonParser *parser = [[SBJsonParser alloc] init];

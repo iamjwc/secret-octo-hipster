@@ -18,9 +18,14 @@
 @property (nonatomic, retain) NSString *globalId;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSSet *tempos;
+@property (nonatomic, retain) NSNumber *owned;
+@property (nonatomic, retain) NSNumber *downloading;
+@property (nonatomic, retain) NSString *key;
 
 + (NSFetchRequest *)fetchRequest;
 + (NSFetchRequest *)allSortedByName;
+
++ (Song *)findByGlobalId:(NSString *)globalId withContext:(NSManagedObjectContext*)context;
 
 + (NSMutableSet*)allGlobalIds;
 + (void)refreshGlobalIdsWithContext:(NSManagedObjectContext*)context;
@@ -30,6 +35,9 @@
 
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
 - (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context;
+
+- (bool)ownedValue;
+- (bool)downloadingValue;
 
 - (NSArray *)sortedTempos;
 - (BOOL)temposAreDownloaded;

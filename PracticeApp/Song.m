@@ -16,9 +16,39 @@ static NSMutableSet *allGlobalIds = nil;
 @dynamic globalId;
 @dynamic name;
 @dynamic tempos;
+@dynamic owned;
+@dynamic downloading;
+@dynamic key;
+
+- (bool)ownedValue
+{
+  return [self.owned boolValue];
+}
+
+- (bool)downloadingValue
+{
+  return [self.downloading boolValue];
+}
 
 + (NSString *)className {
   return NSStringFromClass(self.class);
+}
+
++ (Song *)findByGlobalId:(NSString *)globalId withContext:(NSManagedObjectContext*)context
+{
+  NSFetchRequest *fr = [self fetchRequest];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"globalId==%@", globalId];
+  [fr setPredicate:predicate];
+
+  NSError *error;
+  NSArray *results = [context executeFetchRequest:fr error:&error];
+  
+  if ([results count]) {
+    return [results objectAtIndex:0];
+  } else {
+    return nil;
+  }
 }
 
 + (NSMutableSet*)allGlobalIds
@@ -80,7 +110,10 @@ static NSMutableSet *allGlobalIds = nil;
 - (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context
 {
   if (self = [self initWithName:remoteSong.name andContext:context]) {
-    self.globalId = remoteSong.globalId;
+    self.globalId    = remoteSong.globalId;
+    self.owned       = false;
+    self.downloading = false;
+    self.key         = remoteSong.key;
     
     for (RemoteTempo *remoteTempo in remoteSong.tempos) {
       Tempo *t = [[Tempo alloc] initWithRemoteTempo:remoteTempo andContext:context];

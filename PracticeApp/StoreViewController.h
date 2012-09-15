@@ -18,9 +18,9 @@
 @interface StoreViewController : UITableViewController <RemoteSongCollectionDelegate, StoreCellDelegate>
 {
   RemoteSongCollection *remoteSongCollection;
-  NSMutableArray *remoteSongs;
 }
 
 @property (nonatomic, retain) ASINetworkQueue *networkQueue;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end

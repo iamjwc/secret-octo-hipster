@@ -29,10 +29,10 @@
   }
   
   if (self = [self init]) {
-    self.globalId = g;
-    self.name     = n;
-    self.key      = k;
-    self.tempos   = ts;
+    self.globalId    = g;
+    self.name        = n;
+    self.key         = k;
+    self.tempos      = ts;
   }
   
   return self;

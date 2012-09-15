@@ -18,9 +18,12 @@
 @end
 
 @interface RemoteSongCollection : NSObject
+{
+  NSManagedObjectContext *context;
+}
 
 @property (retain) id <RemoteSongCollectionDelegate> delegate;
 
-+ (void)updateSongsFromRemoteWithContext:(NSManagedObjectContext*)context;
+- (void)updateSongsFromRemoteWithContext:(NSManagedObjectContext*)context;
 
 @end

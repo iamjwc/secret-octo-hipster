@@ -12,6 +12,7 @@
 @implementation StoreViewController
 
 @synthesize networkQueue;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 
 - (NSManagedObjectContext*)managedObjectContext {
@@ -92,54 +93,82 @@
 	NSLog(@"Queue finished");
 }
 
-- (void)viewDidLoad
-{
-  [Song refreshGlobalIdsWithContext:[self managedObjectContext]];
+
+- (NSFetchedResultsController *)refetch {
+  NSFetchRequest *fetchRequest = [Song allSortedByName];
+  
+  NSFetchedResultsController *controller = [[NSFetchedResultsController alloc]
+                                            initWithFetchRequest:fetchRequest
+                                            managedObjectContext:[self managedObjectContext]
+                                            sectionNameKeyPath:nil
+                                            cacheName:nil];
+  
+  controller.delegate = self;
+  
+  _fetchedResultsController = controller;
+  return controller;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+  if (_fetchedResultsController != nil) {
+    return _fetchedResultsController;
+  }
+  
+  return [self refetch];
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  
+  
+  remoteSongCollection = [[RemoteSongCollection alloc] init];
+  remoteSongCollection.delegate = self;
+  [remoteSongCollection updateSongsFromRemoteWithContext:[self managedObjectContext]];
+  
+  NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
+	}
 }
 
 - (void)songsFetched:(id)sender {
-  //[remoteSongs removeAllObjects];
-  //[remoteSongs addObjectsFromArray:remoteSongCollection.songs];
+  [self refetch];
+  
+  NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);
+	}
   
   UITableView *tableView = (UITableView *)self.view;
   [tableView reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-  [super viewDidAppear:animated];
-  
-  remoteSongs = [[NSMutableArray alloc] initWithCapacity:0];
-  
-  remoteSongCollection = [[RemoteSongCollection alloc] init];
-  remoteSongCollection.delegate = self;
-  //[remoteSongCollection fetch];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return [[self.fetchedResultsController sections] count];
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-  return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  return [remoteSongs count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex: section];
+  return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *CellIdentifier = @"StoreCell";
 
-  RemoteSong *rs = (RemoteSong*)[remoteSongs objectAtIndex:indexPath.row];
+  
+  Song *song = (Song *)[self.fetchedResultsController objectAtIndexPath:indexPath];
   
   StoreCell *cell = (StoreCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   cell.index = indexPath.row;
   cell.delegate = self;
-  cell.label.text = rs.name;
-  cell.keyLabel.text = rs.key;
+  cell.label.text = song.name;
+  cell.keyLabel.text = song.key;
   
   // Do not show downloadButton if you've already downladed the song.
-  bool songInLibrary = [[Song allGlobalIds] containsObject:rs.globalId];
+  bool songInLibrary = song.ownedValue;
   if (songInLibrary) {
     [cell.downloadButton setHidden:YES];
   }
@@ -148,21 +177,19 @@
 }
 
 - (void)storeCellDownloadButtonPressedAtIndex:(NSInteger)i withSender:(id)sender {
-  RemoteSong *rs = [remoteSongs objectAtIndex:i];
+  //RemoteSong *rs = [remoteSongs objectAtIndex:i];
 
-  [[Song allGlobalIds] addObject:rs.globalId];
+  //[[Song allGlobalIds] addObject:rs.globalId];
   
-  StoreCell *cell = (StoreCell*)[[sender superview] superview];
-  [cell.downloadButton setHidden:YES];
-  [cell.downloadProgress setHidden:NO];
+  //StoreCell *cell = (StoreCell*)[[sender superview] superview];
+  //[cell.downloadButton setHidden:YES];
+  //[cell.downloadProgress setHidden:NO];
   
-  Song *s = [[Song alloc] initWithRemoteSong:rs andContext:[self managedObjectContext]];
-  NSError *error = nil;
-  if (![[self managedObjectContext] save:&error]) {
-    NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-  }
-  
-
+  //Song *s = [[Song alloc] initWithRemoteSong:rs andContext:[self managedObjectContext]];
+  //NSError *error = nil;
+  //if (![[self managedObjectContext] save:&error]) {
+  //  NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+  //}
 }
 
 @end
