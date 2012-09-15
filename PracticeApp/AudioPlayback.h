@@ -22,7 +22,7 @@
 
 @property (nonatomic, assign)	BOOL wasInterrupted;		// Whether playback was interrupted by the system
 
-- (id)initWithPath:(NSString *)filePath;
+- (id)initWithAudioData:(NSData *)audioData;
 - (BOOL)isPlaying;
 - (void)playPause;
 - (void)stop;

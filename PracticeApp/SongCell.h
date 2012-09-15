@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SngCellDelegate
+@protocol SongCellDelegate
 
 - (IBAction)songCellDownloadButtonPressedAtIndex:(NSInteger)i withSender:(id)sender;
 
@@ -18,7 +18,6 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) IBOutlet UIButton *downloadButton;
-@property (nonatomic, retain) IBOutlet UIProgressView *downloadProgress;
 @property (nonatomic, retain) id delegate;
 @property (nonatomic, assign) NSInteger index;
 

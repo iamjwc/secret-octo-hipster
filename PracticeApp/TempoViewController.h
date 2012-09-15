@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Tempo.h"
+
 @interface TempoViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) Tempo *tempo;
 
-- (id)init;
+- (id)initWithTempo:(Tempo*)tempo;
 
 @end

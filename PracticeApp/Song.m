@@ -44,8 +44,14 @@ static NSMutableSet *allGlobalIds = nil;
   }
 }
 
+
++ (NSFetchRequest *)fetchRequest
+{
+  return [[NSFetchRequest alloc] initWithEntityName:[self className]];
+}
+
 + (NSFetchRequest *)allSortedByName {
-  NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:[self className]];
+  NSFetchRequest *fr = [self fetchRequest];
  
   NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
   [fr setSortDescriptors:[NSArray arrayWithObject:sort]];
@@ -53,10 +59,18 @@ static NSMutableSet *allGlobalIds = nil;
   return fr;
 }
 
+- (void)clearAudioDataCache
+{
+  for (Tempo *t in self.tempos) {
+    t.audioData = nil;
+  }
+}
+
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context {
   NSEntityDescription *entity = [NSEntityDescription entityForName:[[self class] className] inManagedObjectContext:context];
 
   if (self = [super initWithEntity:entity insertIntoManagedObjectContext:context]) {
+    allGlobalIds = nil;
     [self setName: name];
   }
   

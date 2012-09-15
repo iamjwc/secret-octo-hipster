@@ -19,6 +19,11 @@ static NSURL *storeUrl = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // Initialize Models by setting DB location.
+  storeUrl = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FailedBankCD.sqlite"];
+  
+  [Song refreshGlobalIdsWithContext:[AppDelegate managedObjectContext]];
+
   // Override point for customization after application launch.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -26,10 +31,6 @@ static NSURL *storeUrl = nil;
     splitViewController.delegate = (id)navigationController.topViewController;
   }
   
-  
-  // Initialize Models by setting DB location.
-  storeUrl = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FailedBankCD.sqlite"];
-
   /*
   NSManagedObjectContext *context = [self managedObjectContext];
   

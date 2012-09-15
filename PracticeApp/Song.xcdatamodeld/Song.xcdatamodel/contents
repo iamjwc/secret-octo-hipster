@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Song" representedClassName="Song" syncable="YES">
+        <attribute name="downloading" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="globalId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="owned" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="tempos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tempo" syncable="YES"/>
     </entity>
     <entity name="Tempo" representedClassName="Tempo" syncable="YES">
@@ -12,7 +14,7 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Song" positionX="-801" positionY="-3447" width="128" height="90"/>
-        <element name="Tempo" positionX="-657" positionY="-3402" width="128" height="105"/>
+        <element name="Song" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Tempo" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

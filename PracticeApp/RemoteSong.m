@@ -13,12 +13,14 @@
 
 @synthesize globalId;
 @synthesize name;
+@synthesize key;
 @synthesize tempos;
 
 - (id)initWithDictionary:(NSDictionary*)d
 {
   NSString *g = [d objectForKey:@"globalId"];
   NSString *n = [d objectForKey:@"name"];
+  NSString *k = [d objectForKey:@"key"];
   NSMutableArray *ts = [[NSMutableArray alloc] init];
   
   NSArray  *rawTs = [d objectForKey:@"tempos"];
@@ -29,6 +31,7 @@
   if (self = [self init]) {
     self.globalId = g;
     self.name     = n;
+    self.key      = k;
     self.tempos   = ts;
   }
   

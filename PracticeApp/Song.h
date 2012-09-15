@@ -19,15 +19,22 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSSet *tempos;
 
++ (NSFetchRequest *)fetchRequest;
 + (NSFetchRequest *)allSortedByName;
+
 + (NSMutableSet*)allGlobalIds;
 + (void)refreshGlobalIdsWithContext:(NSManagedObjectContext*)context;
+
++ (NSMutableSet*)downloadingGlobalIds;
++ (void)refreshDownloadingGlobalIdsWithContext:(NSManagedObjectContext*)context;
 
 - (id)initWithName:(NSString *)name andContext:(NSManagedObjectContext *)context;
 - (id)initWithRemoteSong:(RemoteSong*)remoteSong andContext:(NSManagedObjectContext*)context;
 
 - (NSArray *)sortedTempos;
 - (BOOL)temposAreDownloaded;
+
+- (void)clearAudioDataCache;
 
 @end
 

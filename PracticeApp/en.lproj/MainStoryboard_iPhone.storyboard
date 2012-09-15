@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="AB0-xz-deO">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="AB0-xz-deO">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller - Songs-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -20,6 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-183" y="-327"/>
         </scene>
+        <!--Navigation Controller - Store-->
         <scene sceneID="E0Y-FR-SZk">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bnk-0F-8Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,6 +37,7 @@
             </objects>
             <point key="canvasLocation" x="-183" y="286"/>
         </scene>
+        <!--Store View Controller - Store-->
         <scene sceneID="Zfx-wp-WPA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l81-Kd-4Du" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,19 +54,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="XHy-pM-wOP">
-                                            <rect key="frame" x="13" y="12" width="262" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="XHy-pM-wOP">
+                                            <rect key="frame" x="37" y="13" width="184" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="MMm-ho-Mwh">
-                                            <rect key="frame" x="280" y="8" width="29" height="29"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="A" lineBreakMode="tailTruncation" minimumFontSize="20" id="tSD-t4-VRu">
+                                            <rect key="frame" x="7" y="10" width="22" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="MMm-ho-Mwh">
+                                            <rect key="frame" x="281" y="8" width="29" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                             <state key="normal">
-                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="highlighted">
@@ -73,11 +83,17 @@
                                                 <action selector="buttonTouchUpInside:" destination="X61-gT-Njn" eventType="touchUpInside" id="05n-8a-geu"/>
                                             </connections>
                                         </button>
+                                        <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="maN-rF-vMs">
+                                            <rect key="frame" x="221" y="17" width="55" height="9"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </progressView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
                                     <outlet property="downloadButton" destination="MMm-ho-Mwh" id="g6v-rj-0cz"/>
+                                    <outlet property="downloadProgress" destination="maN-rF-vMs" id="4ep-HD-jb5"/>
+                                    <outlet property="keyLabel" destination="tSD-t4-VRu" id="4MC-di-h1G"/>
                                     <outlet property="label" destination="XHy-pM-wOP" id="lHi-zz-MFM"/>
                                 </connections>
                             </tableViewCell>
@@ -87,11 +103,12 @@
                             <outlet property="delegate" destination="hSV-zY-1Vj" id="jHz-Pm-MpV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Download Songs" id="DEj-kn-3uc"/>
+                    <navigationItem key="navigationItem" title="Store" id="DEj-kn-3uc"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="318" y="286"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="NkU-Ld-Nhk">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ns-hH-pUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,6 +127,7 @@
             </objects>
             <point key="canvasLocation" x="-661" y="-33"/>
         </scene>
+        <!--Songs View Controller - Songs-->
         <scene sceneID="18">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
@@ -127,40 +145,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="20" id="YkR-Nw-eIX">
-                                            <rect key="frame" x="13" y="11" width="83" height="20"/>
+                                            <rect key="frame" x="34" y="11" width="194" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="gAb-dy-mdj">
-                                            <rect key="frame" x="130" y="17" width="161" height="9"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="A" lineBreakMode="tailTruncation" minimumFontSize="20" id="VuY-jI-Grp">
+                                            <rect key="frame" x="10" y="9" width="22" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </progressView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="yKA-qu-53d">
-                                            <rect key="frame" x="104" y="12" width="18" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal">
-                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="downloadButtonTouchUpInside:" destination="TOD-pj-yOh" eventType="touchUpInside" id="4Ke-ZM-nFP"/>
-                                            </connections>
-                                        </button>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="downloadButton" destination="yKA-qu-53d" id="TOl-fx-ewg"/>
-                                    <outlet property="downloadProgress" destination="gAb-dy-mdj" id="aFo-Mf-fO6"/>
                                     <outlet property="label" destination="YkR-Nw-eIX" id="ZG9-7m-Wim"/>
-                                    <segue destination="lvg-CH-tww" kind="push" identifier="BPMSegue" id="ehH-SP-R7R"/>
+                                    <segue destination="DDJ-5J-7mV" kind="push" identifier="PlayerSegue" id="AHb-ti-vB6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -169,45 +173,12 @@
                             <outlet property="delegate" destination="12" id="vwe-Ir-WwX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Songs" id="35"/>
+                    <navigationItem key="navigationItem" title="Songs" id="35"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="407" y="-327"/>
         </scene>
-        <scene sceneID="cVA-IZ-7t1">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-G3-GCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="BPM" id="lvg-CH-tww" customClass="BpmsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wkh-oZ-b4i">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BPMCell" id="MXG-Ch-0Fg">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="DDJ-5J-7mV" kind="push" identifier="PlayerSegue" id="WU9-5K-61e"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="lvg-CH-tww" id="LFm-OS-shQ"/>
-                            <outlet property="delegate" destination="lvg-CH-tww" id="K6w-qv-QDx"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="BPM" id="2NB-R9-Vuy"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="966" y="-327"/>
-        </scene>
+        <!--Player View Controller-->
         <scene sceneID="e6z-Ax-9gc">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PK0-eO-Wgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,12 +187,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="zHr-cb-MmX">
-                                <rect key="frame" x="163" y="64" width="79" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8dR-SU-F6L">
-                                <rect key="frame" x="25" y="84" width="72" height="37"/>
+                                <rect key="frame" x="124" y="316" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Play">
@@ -236,37 +203,48 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="7Fr-8l-XBD">
-                                <rect key="frame" x="78" y="20" width="150" height="9"/>
+                                <rect key="frame" x="85" y="299" width="150" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
-                            <view contentMode="scaleToFill" id="non-ha-c5Q">
-                                <rect key="frame" x="0.0" y="193" width="320" height="138"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="6kE-zG-6QC">
+                                <rect key="frame" x="0.0" y="20" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DDJ-5J-7mV" id="hus-Gj-0nC"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="ey6-a2-xIP">
+                                <rect key="frame" x="0.0" y="91" width="320" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <connections>
+                                    <action selector="changePage:" destination="DDJ-5J-7mV" eventType="valueChanged" id="Ygz-IJ-An8"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="inM-Ep-s8y"/>
                     <connections>
+                        <outlet property="pageControl" destination="ey6-a2-xIP" id="AyV-uO-NY4"/>
                         <outlet property="playPauseButton" destination="8dR-SU-F6L" id="0sf-NL-jwg"/>
                         <outlet property="progress" destination="7Fr-8l-XBD" id="QvW-HH-1m0"/>
+                        <outlet property="scrollView" destination="6kE-zG-6QC" id="pU7-sk-rRU"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1447" y="-327"/>
+            <point key="canvasLocation" x="881" y="-327"/>
         </scene>
     </scenes>
     <classes>
-        <class className="BpmsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BpmsViewController.h"/>
-        </class>
         <class className="PlayerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerViewController.h"/>
             <relationships>
+                <relationship kind="action" name="changePage:"/>
                 <relationship kind="action" name="playPausePressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="playPauseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="progress" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="SongCell" superclassName="UITableViewCell">
@@ -274,7 +252,6 @@
             <relationships>
                 <relationship kind="action" name="downloadButtonTouchUpInside:"/>
                 <relationship kind="outlet" name="downloadButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="downloadProgress" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -286,11 +263,16 @@
             <relationships>
                 <relationship kind="action" name="buttonTouchUpInside:"/>
                 <relationship kind="outlet" name="downloadButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="downloadProgress" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="keyLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="StoreViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="storeCellDownloadButtonPressedAtIndex:withSender:" candidateClass="NSInteger"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

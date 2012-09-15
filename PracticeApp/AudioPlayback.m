@@ -15,12 +15,11 @@
 @synthesize backingTrackPlayer;
 @synthesize delegate;
 
-- (id)initWithPath:(NSString *)filePath
+- (id)initWithAudioData:(NSData *)audioData
 {	
 	if (self = [super init]) {
-    self.backingTrackUrl = [[NSURL alloc] initFileURLWithPath:filePath];
-
-		self.backingTrackPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[self backingTrackUrl] error:nil];	
+		self.backingTrackPlayer =[[AVAudioPlayer alloc] initWithData:audioData error:nil];
+    
     self.backingTrackPlayer.numberOfLoops = -1;
     
     self.wasInterrupted = NO;

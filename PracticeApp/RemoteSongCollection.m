@@ -11,35 +11,33 @@
 @implementation RemoteSongCollection
 
 @synthesize delegate;
-@synthesize songs;
 
-- (id)init {
-  if (self = [super init]) {
-    self.songs = nil;
-  }
-  return self;
-}
-
-- (void)fetch
++ (void)updateSongsFromRemoteWithContext:(NSManagedObjectContext*)context;
 {
-  NSURL *url = [NSURL URLWithString:@"http://localhost:8080/songs"];
+  NSURL *url = [NSURL URLWithString:@"https://raw.github.com/gist/3687548/d2d2252356edf9f5a889bde5f1e713d1cbfc273a/file.json"];
   ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
   [request setDelegate:self];
+  [[request userInfo] setValue:context forKey:@"context"];
   [request startAsynchronous];
 }
 
-- (NSArray*)remoteSongsWithDictionary:(NSArray*)songs
+- (void)updateSongsWithArray:(NSArray*)songs andContext:(NSManagedObjectContext*)context
 {
-  NSMutableArray *remoteSongs = [[NSMutableArray alloc] init];
   for (NSDictionary *s in songs) {
-    [remoteSongs addObject:[[RemoteSong alloc] initWithDictionary:s]];
+    RemoteSong *rs = [[RemoteSong alloc] initWithDictionary:s];
+    Song *s = [[Song alloc]  initWithRemoteSong:rs andContext:context];
   }
   
-  return remoteSongs;
+  NSError *error = nil;
+  if (![context save:&error])
+  {
+    NSLog(@"error");
+  }
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
+  NSManagedObjectContext *context = [[request userInfo] objectForKey:@"context"];
   NSString *responseJson = [request responseString];
   
   SBJsonParser *parser = [[SBJsonParser alloc] init];
@@ -47,7 +45,7 @@
   
   NSDictionary *json = [parser objectWithString:responseJson];
 
-  self.songs = [self remoteSongsWithDictionary:[json objectForKey:@"songs"]];
+  [self updateSongsWithArray:[json objectForKey:@"songs"] andContext:context];
   
   [delegate songsFetched:self];
 }

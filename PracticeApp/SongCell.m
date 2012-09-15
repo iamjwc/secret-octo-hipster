@@ -12,7 +12,6 @@
 
 @synthesize label;
 @synthesize downloadButton;
-@synthesize downloadProgress;
 @synthesize delegate;
 @synthesize index;
 

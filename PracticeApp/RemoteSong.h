@@ -13,6 +13,7 @@
 
 @property (retain) NSString *globalId;
 @property (retain) NSString *name;
+@property (retain) NSString *key;
 @property (retain) NSArray  *tempos;
 
 - (id)initWithDictionary:(NSDictionary*)d;

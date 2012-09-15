@@ -11,13 +11,20 @@
 @implementation TempoViewController
 
 @synthesize label;
+@synthesize tempo;
 
-- (id)init
+- (id)initWithTempo:(Tempo*)tempo
 {
   if (self = [super initWithNibName:@"TempoView" bundle:nil]) { 
-    //[self view];
+    self.tempo = tempo;
   }
   return self;
+}
+
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  self.label.text = [NSString stringWithFormat:@"%@ bpm", tempo.bpm];
 }
 
 @end

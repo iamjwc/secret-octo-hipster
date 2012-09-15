@@ -12,13 +12,15 @@
 #import "Song.h"
 #import "Tempo.h"
 #import "StoreCell.h"
-
-
+#import "ASIHTTPRequest.h"
+#import "ASINetworkQueue.h"
 
 @interface StoreViewController : UITableViewController <RemoteSongCollectionDelegate, StoreCellDelegate>
 {
   RemoteSongCollection *remoteSongCollection;
   NSMutableArray *remoteSongs;
 }
+
+@property (nonatomic, retain) ASINetworkQueue *networkQueue;
 
 @end

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SBJson.h"
 #import "ASIHTTPRequest.h"
+
+#import "Song.h"
 #import "RemoteSong.h"
 
 @protocol RemoteSongCollectionDelegate
@@ -17,9 +19,8 @@
 
 @interface RemoteSongCollection : NSObject
 
-@property (retain) NSArray *songs;
 @property (retain) id <RemoteSongCollectionDelegate> delegate;
 
-- (void)fetch;
++ (void)updateSongsFromRemoteWithContext:(NSManagedObjectContext*)context;
 
 @end
